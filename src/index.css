@@ -1,0 +1,181 @@
+.sectionone{
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.Hometab {
+  text-align: center;
+  color: #973e3e;
+  background-color: #c9c7be;
+
+  font-size: 18px;
+  margin: 0 auto;
+  line-height: 58px;
+  font-weight: 700;
+  box-shadow: 0 1px 2px #af9797;
+}
+body{
+background-color: #f9c2c5;
+}
+.box-wrapper{
+
+padding: 30px 30px 32px;
+background: var(--clr-common-white);
+border-radius: 1rem;   
+box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+background-color: #f3f2e7 
+}
+.bg_color{
+background-color: #f3f2e7 
+}
+.sidebar__widget {
+min-height: 370px;
+margin-bottom: 20px;
+}
+.form-label{
+  font-size: 18px;
+  font-weight: 700;
+  color: #864f4f;
+}
+
+.ui-form-widget{
+  max-width: 100%;
+  border: 0 solid #900;
+  border-radius: 0;
+
+  background: #fff;
+  float: left;
+  width: 100%;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, .06);
+  border-radius: 6px;
+}
+#footer p{
+  padding: 10px 0;
+  font-weight: 400;
+  font-size: 12px;
+  color: #973e3e;
+  border-top: 5px solid #ffaa07;
+}
+.hero-image {
+  background-color: #cccccc;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.lagnaInput{
+  text-align:center;
+  color:#973e3e;
+  font-weight:bold
+}
+
+.hero-text {
+  position: absolute;
+  top: 29%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(3, 3, 3);
+}
+.label_common {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  color:#973e3e;
+  font-size: 18px;
+  font-weight: 700;
+}
+.label_1 {
+  top: 10%;
+  left: 50%;        
+}
+.label_2 {
+  top: 20%;
+  left: 25%;        
+}
+.label_3 {
+  top: 25%;
+  left: 20%;        
+}
+.label_4 {
+  top: 49%;
+  left: 45%;        
+}
+.label_5 {
+  top: 74%;
+  left: 20%;        
+}
+.label_6 {
+  top: 78%;
+  left: 25%;        
+}
+.label_7 {
+  top: 60%;
+  left: 50%;        
+}
+.label_8 {
+  top: 78%;
+  left: 76%;       
+}
+.label_9 {
+  top: 74%;
+  left: 80%;        
+}
+.label_10 {
+  top: 50%;
+  left: 56%;         
+}
+.label_11 {
+  top: 25%;
+  left: 81%;        
+}
+.label_12 {
+  top: 20%;
+  left: 75%;        
+}
+
+.txt_label_1{
+  top: 25%;
+  left: 32%; 
+}
+.txt_label_2{
+  top: 10%;
+  left: 25%; 
+}
+.txt_label_3{
+  top: 25%;
+  left: 10%; 
+}
+.txt_label_4{
+  top: 50%;
+  left: 25%; 
+}
+.txt_label_5{
+  top: 73%;
+  left: 10%; 
+}
+.txt_label_6{
+  top: 88%;
+  left: 25%; 
+}
+.txt_label_7{
+  top: 73%;
+  left: 50%; 
+}
+.txt_label_8{
+  top: 87%;
+  left: 76%;    
+}
+.txt_label_9{
+  top: 74%;
+  left: 90%;     
+}
+.txt_label_10{
+  top: 50%;
+  left: 76%;     
+}
+.txt_label_11{
+  top: 25%;
+  left: 90%;   
+}
+.txt_label_12{
+  top: 10%;
+  left: 75%;  
+}
