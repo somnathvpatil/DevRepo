@@ -1,0 +1,22 @@
+.header {
+  margin: auto;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f3f2e7;
+}
+
+.list {
+  display: flex;
+  gap: 1rem;
+}
+
+.list a {
+  text-decoration: none;
+  color: #973e3e;
+}
+
+.list a:hover,
+.list a.active {
+  color: var(--color-primary-800);
+}
