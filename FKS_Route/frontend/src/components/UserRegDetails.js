@@ -15,7 +15,7 @@ export default function UserRegDetails() {
       <h3 style={{textAlign: 'center'}}> Register Customer Details </h3>
       </div>
       <div className="row mt-2">
-      <Table striped bordered hover>
+      <Table striped bordered hover style={{maxWidth: '100%'}}>
          <thead>
             <tr>
                 <th>id</th>

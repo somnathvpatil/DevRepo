@@ -41,7 +41,7 @@ export async function action({ request, params }) {
     plu:parseInt(data.get('plu')),
     min:parseInt(data.get('min')),
   };
-  let url = 'http://localhost:3000/saveKundaliGen';
+  let url = 'http://localhost:3001/saveKundaliGen';
 
   const response = await fetch(url, {
     method: 'POST',

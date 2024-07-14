@@ -43,6 +43,30 @@ function MainNavigation() {
               User Reg Details
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/blogPost"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+              end
+            >
+              New Blog Post
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/testPDF"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+              end
+            >
+              TestPDF
+            </NavLink>
+          </li>
+          
+
           {!token && (
             <li>
               <NavLink
@@ -62,6 +86,7 @@ function MainNavigation() {
               </Form>
             </li>
           )}
+
         </ul>
       </nav>
       <NewsletterSignup />

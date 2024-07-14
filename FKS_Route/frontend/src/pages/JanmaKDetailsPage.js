@@ -9,7 +9,7 @@ export default function JanmaKDetailsPage() {
 }
 export async function loader({ request, params }) {
   let custId =params.custId;
-  const responseKKDetails = await fetch('http://localhost:3000/getkundaliAndCustData/'+custId);
+  const responseKKDetails = await fetch('http://localhost:3001/getkundaliAndCustData/'+custId);
   console.log(responseKKDetails) ;
     if (!responseKKDetails.ok) {
       throw json(

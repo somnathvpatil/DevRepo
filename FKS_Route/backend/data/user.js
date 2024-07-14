@@ -8,10 +8,10 @@ async function add(data) {
   const storedData = await readData();
   const userId = generateId();
   const hashedPw = await hash(data.password, 12);
-  if (!storedData.users) {
-    storedData.users = [];
+  if (!storedData.customers) {
+    storedData.customers = [];
   }
-  storedData.users.push({ ...data, password: hashedPw, id: userId });
+  storedData.customers.push({ ...data, password: hashedPw, id: userId });
   await writeData(storedData);
   return { id: userId, email: data.email };
 }

@@ -34,19 +34,20 @@ export async function action({ request , params }) {
       zip: data.get('zip')
     };
   
-    let url = 'http://localhost:3000/saveCustomer';
+//    let url = 'http://localhost:3000/saveCustomer';
+    let url = 'http://localhost:3001/saveCustomer';
   
     if (method === 'PATCH') {
       const eventId = params.eventId;
-      url = 'http://localhost:8080/saveCustomer/' + eventId;
+      url = 'http://localhost:3001/saveCustomer/' + eventId;
     }
   
-    //const token = getAuthToken();
+    const token = getAuthToken();
     const response = await fetch(url, {
       method: method,
       headers: {
         'Content-Type': 'application/json',
-     //   'Authorization': 'Bearer ' + token
+        'Authorization': 'Bearer ' + token
       },
       body: JSON.stringify(customerData),
     });

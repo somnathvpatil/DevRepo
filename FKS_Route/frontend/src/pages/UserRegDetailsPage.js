@@ -14,7 +14,7 @@ export async function loader({ request, params }) {
 //  const id = params.eventId;
 
   //const response = await fetch('http://localhost:8080/events/' + id);
-  const response = await fetch('http://localhost:3000/customers/');
+  const response = await fetch('http://localhost:3001/getAllCustomer/');
   if (!response.ok) {
     throw json(
       { message: 'Could not fetch details for selected event.' },
@@ -24,6 +24,7 @@ export async function loader({ request, params }) {
     );
   } else {
     const resUserRegData = await response.json();
+    console.log("resUserRegData",resUserRegData);
     return resUserRegData;
   }
 }

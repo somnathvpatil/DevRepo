@@ -25,7 +25,7 @@ export default function UserReg({method}) {const data = useActionData();
           {data && data.message && <p>{data.message}</p>}
          <div className="row mt-2">
             <div className="col mt-2">
-              <label  htmlFor="firstName" className="form-label">First Name</label>
+              <label  htmlFor="firstName" className="form-label">First Name *</label>
               <input
                 required
                 type="text"
@@ -39,7 +39,6 @@ export default function UserReg({method}) {const data = useActionData();
             <div className="col mt-2">
               <label  htmlFor="middelName" className="form-label">Middel Name</label>
               <input
-                required
                 type="text"
                 placeholder="Middel name"
                 defaultValue="Showrn"
@@ -49,7 +48,7 @@ export default function UserReg({method}) {const data = useActionData();
               />          
             </div>
             <div className="col mt-2">
-              <label  htmlFor="lastName" className="form-label">Last Name</label>
+              <label  htmlFor="lastName" className="form-label">Last Name *</label>
               <input
                 required
                 type="text"
@@ -63,7 +62,7 @@ export default function UserReg({method}) {const data = useActionData();
           </div>
           <div className="row mt-2">
             <div className="col-md-4">
-              <label  htmlFor="dateBirth" className="form-label">Date of Birth & Time</label>
+              <label  htmlFor="dateBirth" className="form-label">Date of Birth & Time *</label>
               <input
                 required
                 type="datetime-local" 
@@ -72,7 +71,7 @@ export default function UserReg({method}) {const data = useActionData();
               />          
             </div>
             <div className="col-md-4">
-              <label  htmlFor="gender1" className="form-label">Gender</label>
+              <label  htmlFor="gender1" className="form-label">Gender *</label>
               <input
                 type="text"
                 placeholder="Gender"
@@ -124,7 +123,7 @@ export default function UserReg({method}) {const data = useActionData();
             <div className="col mt-2">
               <label  htmlFor="dateOfPlace" className="form-label">Password</label>
               <input
-                type="text"
+                type="password"
                 name="pwd"
                 required
                 aria-label="Last name"

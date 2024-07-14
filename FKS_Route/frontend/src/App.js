@@ -24,6 +24,8 @@ import GooglePayPage from './pages/GooglePayPage';
 import UserRegDetailsPage,{action as manipulateUserRegDetailsAction} from './pages/UserRegDetailsPage';
 import {loader as userRegDetilsLoader} from './pages/UserRegDetailsPage';
 import JanmaKDetailsPage,{loader as janmaKDetailsloader}   from './pages/JanmaKDetailsPage';
+import NewBlogPostForm,{action as blogSubmitAction } from './pages/BlogPostForm';
+import TestPDF from './components/TestPDF';
 
 const router = createBrowserRouter([
   {
@@ -55,6 +57,12 @@ const router = createBrowserRouter([
         element: <JanmaKDetailsPage />,
         loader: janmaKDetailsloader,
       },
+      {
+        path: 'blogPost',
+        element: <NewBlogPostForm />,
+        action: blogSubmitAction,
+      },
+
       {
         path: 'googlePay',
         element: <GooglePayPage />,
@@ -107,6 +115,10 @@ const router = createBrowserRouter([
       {
         path: 'logout',
         action: logoutAction,
+      },
+      {
+        path: 'testPDF',
+        element: <TestPDF />,
       },
     ],
   },

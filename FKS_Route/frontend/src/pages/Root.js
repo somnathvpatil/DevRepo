@@ -32,10 +32,11 @@ function RootLayout() {
     <>
       <MainNavigation />
       <main>
-        <div className="container sectionone my-2">   
+        <div className="mx-3 my-1">   
 
         <div className="row">
-          <div className='col-xl-8 col-lg-8 '>
+          <Blog/> 
+          <div className='col-xl-8 col-lg-8'  >
             <div className='box-wrapper'>
               {/* {navigation.state === 'loading' && <p>Loading...</p>} */}
               <Outlet />
