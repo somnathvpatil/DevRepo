@@ -4,7 +4,7 @@ import GooglePayButton from '@google-pay/button-react';
 export default function GooglePay() {
   return (
     <div>
-      <span style={{textAlign:'center'}}><h4>Registraion Successfully done you need to pay Kundali Charges & within 15days you will get kundali by courier</h4></span>
+      <span style={{textAlign:'center'}}><h4>Registraion Successfully done you need to pay Kundali Charges & then within 15days you will get kundali by courier</h4></span>
         <GooglePayButton
               environment='TEST' // PRODUCTION
               paymentRequest={

@@ -8,6 +8,7 @@ function MainNavigation() {
 
   return (
     <header className={classes.header}>
+     { console.log("token"+token)}
       <nav>
         <ul className={classes.list}>
           <li>
@@ -32,8 +33,7 @@ function MainNavigation() {
             >
               User Reg
             </NavLink>
-          </li>
-        )}
+          </li>)}
           {token && (
           <li>
             <NavLink
@@ -46,7 +46,7 @@ function MainNavigation() {
               User Reg Details
             </NavLink>
           </li>
-           )}
+          )}
           {token && (
           <li>
             <NavLink
@@ -60,19 +60,7 @@ function MainNavigation() {
             </NavLink>
           </li>
           )}
-          {!token && (
-            <li>
-              <NavLink
-                to="/auth?mode=login"
-                className={({ isActive }) =>
-                  isActive ? classes.active : undefined
-                }
-              >
-                Authentication
-              </NavLink>
-            </li>
-          )}
-           <li>
+          {token && (<li>
             <NavLink
               to="/about"
               className={({ isActive }) =>
@@ -83,16 +71,28 @@ function MainNavigation() {
               About
             </NavLink>
           </li>
-          {token && (
+          )}
+          {!token && (
             <li>
-              <Form action="/logout" method="post">
-                <button>Logout</button>
-              </Form>
+              <NavLink
+                to="/auth?mode=login"
+                className={({ isActive }) =>
+                  isActive ? classes.active : undefined
+                }
+              >
+                Sign-In
+              </NavLink>
             </li>
           )}
-
+         
         </ul>
       </nav>
+    {token && (
+            <Form action="/logout" method="post">
+              <button>Logout</button>
+            </Form>
+          
+        )}
     </header>
   );
 }

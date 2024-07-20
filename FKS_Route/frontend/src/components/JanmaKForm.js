@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Link } from 'react-router-dom';
 import classes from './JanmaKForm-module.css';
+import Alert from './Alert';
 export default function Janam(props) {
 const [surya, setSurya] = useState('');
 const [chndra, setChndra] = useState('');
@@ -116,19 +117,30 @@ const [txt_label_9, setTxt_label_9] = useState('');
 const [txt_label_10, setTxt_label_10] = useState('');
 const [txt_label_11, setTxt_label_11] = useState('');
 const [txt_label_12, setTxt_label_12] = useState('');
-
+const [alert, setAlert] = useState(null);
+const showAlert = (message, type) => {
+    setAlert({
+      msg: message,
+      type: type,
+    });
+    setTimeout(() => {
+      setAlert(null);
+    }, 5500);
+  };
 
 const submitKData = event => {
     props.toggleMode(surya,mesh,chndra,rushabh,mangal,mithuen,budha,karka,guru,seeha,shukra,kanya,shani,tula,rahu,vrashuk,ketu,dhanu,harshal,makar,nep,kumbh,plu,min);
 };
 const valRangeValidate =(event)=>{
 let x=event.target.value;
-    if(!(x >=1 && x <= 12)){
+    if(!(parseInt(x) >=1 && parseInt(x) <= 12)){
         //props.showAlert(event.target.title,"danger");
         //alert(event.target.title);
-        event.target.value='';  
+        event.target.value=""; 
+        showAlert(event.target.title+' value is invalid , please enter valid value between 1 to 12', 'danger');
     }
 }
+
 const setKundliNo =(event)=>{
     event.preventDefault();
     let x=event.target.value;   
@@ -159,6 +171,7 @@ const setKundliNo =(event)=>{
         //props.showAlert(event.target.title,"danger");
         //alert(event.target.title);
         event.target.value=""; 
+        showAlert(event.target.title+' Invalid value', 'danger');
         setEmptyLbl();
     }
 }
@@ -179,6 +192,7 @@ const setKundliText =()=>{
 }
 const setTxtSurya =() =>{
     let lbl='सूर्य';
+    console.log("surya",surya);
     if(surya==='1'){
         setTxt_label_1(lbl);
     }else if(surya==='2'){        
@@ -203,6 +217,8 @@ const setTxtSurya =() =>{
         setTxt_label_11(lbl);
     }else if(surya==='12'){
         setTxt_label_12(lbl);
+    }else{
+        showAlert('please enter सूर्य ग्रह value', 'danger');
     }
 }
 const setTxtChndra =() =>{
@@ -232,7 +248,9 @@ const setTxtChndra =() =>{
        setTxt_label_11(lbl);
    }else if(chndra==='12'){
        setTxt_label_12(lbl);
-   }
+    }else{
+        showAlert('please enter चंद्र ग्रह value', 'danger');
+    }
 }
 const setTxtMangal =() =>{
    let lbl='मंगल';
@@ -261,7 +279,9 @@ const setTxtMangal =() =>{
        setTxt_label_11(lbl);
    }else if(mangal==='12'){
        setTxt_label_12(lbl);
-   }
+    }else{
+        showAlert('please enter मंगल ग्रह value', 'danger');
+    }
 }
 const setTxtBudha =() =>{
    let lbl='बुध';
@@ -290,7 +310,9 @@ const setTxtBudha =() =>{
        setTxt_label_11(lbl);
    }else if(budha==='12'){
        setTxt_label_12(lbl);
-   }
+    }else{
+        showAlert('please enter बुध ग्रह value', 'danger');
+    }
 }
 const setTxtGuru =() =>{
    let lbl='गुरू';
@@ -319,7 +341,9 @@ const setTxtGuru =() =>{
        setTxt_label_11(lbl);
    }else if(guru==='12'){
        setTxt_label_12(lbl);
-   }
+    }else{
+        showAlert('please enter गुरू ग्रह value', 'danger');
+    }
 }
 const setTxtShukra =() =>{
    let lbl='शुक्र';
@@ -347,7 +371,9 @@ const setTxtShukra =() =>{
        setTxt_label_11(lbl);
    }else if(shukra==='12'){
        setTxt_label_12(lbl);
-   }
+    }else{
+        showAlert('please enter शुक्र ग्रह value', 'danger');
+    }
 }
 const setTxtShani =() =>{
    let lbl='शनि';
@@ -375,7 +401,9 @@ const setTxtShani =() =>{
        setTxt_label_11(lbl);
    }else if(shani==='12'){
        setTxt_label_12(lbl);
-   }
+    }else{
+        showAlert('please enter शनि ग्रह value', 'danger');
+    }
 }
 const setTxtRahu =() =>{
    let lbl='राहु';
@@ -403,7 +431,9 @@ const setTxtRahu =() =>{
        setTxt_label_11(lbl);
    }else if(rahu==='12'){
        setTxt_label_12(lbl);
-   }
+    }else{
+        showAlert('please enter राहु ग्रह value', 'danger');
+    }
 }
 const setTxtKetu =() =>{
    let lbl='केतु';
@@ -431,7 +461,9 @@ const setTxtKetu =() =>{
        setTxt_label_11(lbl);
    }else if(ketu==='12'){
        setTxt_label_12(lbl);
-   }
+    }else{
+        showAlert('please enter केतु ग्रह value', 'danger');
+    }
 }
 const setTxtHarshal =() =>{
    let lbl='हर्षल';
@@ -459,7 +491,9 @@ const setTxtHarshal =() =>{
        setTxt_label_11(lbl);
    }else if(harshal==='12'){
        setTxt_label_12(lbl);
-   }
+    }else{
+        showAlert('please enter हर्षल ग्रह value', 'danger');
+    }
 }
 
 const setTxtNep =() =>{
@@ -488,7 +522,9 @@ const setTxtNep =() =>{
        setTxt_label_11(lbl);
    }else if(nep==='12'){
        setTxt_label_12(lbl);
-   }
+    }else{
+        showAlert('please enter नेप ग्रह value', 'danger');
+    }
 }
 const setTxtPlu =() =>{
    let lbl='प्लू';
@@ -516,7 +552,9 @@ const setTxtPlu =() =>{
        setTxt_label_11(lbl);
    }else if(plu==='12'){
        setTxt_label_12(lbl);
-   }
+    }else{
+        showAlert('please enter प्लू ग्रह value', 'danger');
+    }
 }
 const setTxtEmpty =()=>{
    setTxt_label_1('');
@@ -584,16 +622,19 @@ const eraseVal =()=>{
 return (
 <>
 <Form method="post">
+{
+     <Alert alert={alert}/>
+}
 <div className="row" >
    <div className="col-7">
-      <div className="ui-content">
+      <div className="ui-content">        
       <div id="tab" className="Hometab"> लग्न आलेख </div>
          
          <div className="ui-form-widget">
             <div className="hero-image">
                <img src="/kimg/KundliForm.jpg" width="100%" height="100%" alt="Vedic Astrology - Horoscope - Online Kundli Software"/>
                <div className="hero-text">
-                    <input type="number"  onBlur={setKundliNo} tabIndex="27" title="लग्न आलेख" className="form-control  form-control-sm lagnaInput" placeholder="Lagna Kundali" />
+                    <input type="number" id="kNo" min="1" max="12" maxLength="2" onBlur={setKundliNo} tabIndex="27" title="लग्न आलेख" className="form-control  form-control-sm lagnaInput" placeholder="Lagna Kundali" />
                 </div>
                <label className="label_common label_1">{label_1}</label>
                <label className="label_common label_2">{label_2}</label>
@@ -649,13 +690,13 @@ return (
                         <label className="control-label"><b>सूर्य </b></label>
                      </div>
                      <div className="col-4">
-                        <input type="number" className="form-control" name="surya" id="surya" placeholder="सूर्य" maxLength="2" tabIndex="1" data-toggle="tooltip" title="सूर्य"   data-original-title="सूर्य" />
+                        <input type="number" className="form-control" min="1" max="12" maxLength="2" name="surya" id="surya"  onChange={event => setSurya(event.target.value)} value={surya}  onBlur={event => valRangeValidate(event)}  placeholder="सूर्य"  tabIndex="1" data-toggle="tooltip" title="सूर्य"   data-original-title="सूर्य" />
                      </div>
                      <div className="col-2">
                         <label className="control-label"><b> मेष </b></label>
                      </div>
                      <div className="col-4">
-                        <input type="number" className="form-control" onChange={event => setMesh(event.target.value)} value={mesh}  onBlur={event => valRangeValidate(event)} name="mesh" id="mesh" placeholder="मेष" maxLength="2" tabIndex="13" data-toggle="tooltip" title="मेष"   data-original-title="मेष"/>
+                        <input type="number" className="form-control" min="1" max="12" maxLength="2" onChange={event => setMesh(event.target.value)} value={mesh}  onBlur={event => valRangeValidate(event)} name="mesh" id="mesh" placeholder="मेष"  tabIndex="13" data-toggle="tooltip" title="मेष"   data-original-title="मेष"/>
                      </div>
                   </div>
                   <div className="row my-2 ms-1 me-1">
@@ -663,13 +704,13 @@ return (
                         <label className="control-label"><b>चंद्र</b></label>
                      </div>
                      <div className="col-4">
-                        <input type="number" className="form-control" onChange={event => setChndra(event.target.value)} value={chndra} onBlur={event => valRangeValidate(event)}  name="chndra" id="chndra" placeholder="चंद्र" maxLength="2" tabIndex="2" data-toggle="tooltip" title="चंद्र"   data-original-title="चंद्र"/>
+                        <input type="number" className="form-control" min="1" max="12" maxLength="2" onChange={event => setChndra(event.target.value)} value={chndra} onBlur={event => valRangeValidate(event)}  name="chndra" id="chndra" placeholder="चंद्र"  tabIndex="2" data-toggle="tooltip" title="चंद्र"   data-original-title="चंद्र"/>
                      </div>
                      <div className="col-2">
                         <label className="control-label"><b> वृषभ </b></label>
                      </div>
                      <div className="col-4">
-                        <input type="number" className="form-control" onChange={event => setRushabh(event.target.value)} value={rushabh}  onBlur={event => valRangeValidate(event)}  name="rushabh" id="rushabh" placeholder="वृषभ" maxLength="2" tabIndex="14" data-toggle="tooltip" title="वृषभ"   data-original-title="वृषभ"/>
+                        <input type="number" className="form-control" min="1" max="12" maxLength="2" onChange={event => setRushabh(event.target.value)} value={rushabh}  onBlur={event => valRangeValidate(event)}  name="rushabh" id="rushabh" placeholder="वृषभ" tabIndex="14" data-toggle="tooltip" title="वृषभ"   data-original-title="वृषभ"/>
                      </div>
                   </div>
                   <div className="row my-2 ms-1 me-1">
@@ -677,13 +718,13 @@ return (
                         <label className="control-label"> <b>मंगल </b></label>
                      </div>
                      <div className="col-4">
-                        <input type="number" className="form-control" onChange={event => setMangal(event.target.value)} value={mangal}  onBlur={event => valRangeValidate(event)}  name="mangal" id="mangal" placeholder="मंगल" maxLength="2" tabIndex="3" data-toggle="tooltip" title="मंगल"   data-original-title="mangal"/>
+                        <input type="number" className="form-control" min="1" max="12" maxLength="2" onChange={event => setMangal(event.target.value)} value={mangal}  onBlur={event => valRangeValidate(event)}  name="mangal" id="mangal" placeholder="मंगल" tabIndex="3" data-toggle="tooltip" title="मंगल"   data-original-title="mangal"/>
                      </div>
                      <div className="col-2">
                         <label className="control-label"><b> मिथुन </b></label>
                      </div>
                      <div className="col-4">
-                        <input type="number" className="form-control" onChange={event => setMithuen(event.target.value)} value={mithuen}  onBlur={event => valRangeValidate(event)}  name="mithuen" id="mithuen" placeholder="मिथुन" maxLength="2" tabIndex="15" data-toggle="tooltip" title="मिथुन"   data-original-title="mithen"/>
+                        <input type="number" className="form-control" min="1" max="12" maxLength="2" onChange={event => setMithuen(event.target.value)} value={mithuen}  onBlur={event => valRangeValidate(event)}  name="mithuen" id="mithuen" placeholder="मिथुन" tabIndex="15" data-toggle="tooltip" title="मिथुन"   data-original-title="mithen"/>
                      </div>
                   </div>
                   <div className="row my-2 ms-1 me-1">
@@ -691,13 +732,13 @@ return (
                         <label className="control-label"><b>बुध </b></label>
                      </div>
                      <div className="col-4">
-                        <input type="number" className="form-control" onChange={event => setBudha(event.target.value)} value={budha}  onBlur={event => valRangeValidate(event)}  name="budha" id="budha" placeholder="बुध" maxLength="2" tabIndex="4" data-toggle="tooltip" title="बुध"   data-original-title="budha"/>
+                        <input type="number" className="form-control" min="1" max="12" maxLength="2" onChange={event => setBudha(event.target.value)} value={budha}  onBlur={event => valRangeValidate(event)}  name="budha" id="budha" placeholder="बुध" tabIndex="4" data-toggle="tooltip" title="बुध"   data-original-title="budha"/>
                      </div>
                      <div className="col-2">
                         <label className="control-label"><b> कर्क </b></label>
                      </div>
                      <div className="col-4">
-                        <input type="number" className="form-control" onChange={event => setKarka(event.target.value)} value={karka} onBlur={event => valRangeValidate(event)}   name="karka" id="karka" placeholder="कर्क" maxLength="2" tabIndex="16" data-toggle="tooltip" title="कर्क"   data-original-title="karka"/>
+                        <input type="number" className="form-control" min="1" max="12" maxLength="2" onChange={event => setKarka(event.target.value)} value={karka} onBlur={event => valRangeValidate(event)}   name="karka" id="karka" placeholder="कर्क"  tabIndex="16" data-toggle="tooltip" title="कर्क"   data-original-title="karka"/>
                      </div>
                   </div>
                   <div className="row my-2 ms-1 me-1">
@@ -705,13 +746,13 @@ return (
                         <label className="control-label"><b>गुरू</b></label>
                      </div>
                      <div className="col-4">
-                        <input type="number" className="form-control" onChange={event => setGuru(event.target.value)} value={guru}  onBlur={event => valRangeValidate(event)}  name="guru" id="guru" placeholder="गुरू" maxLength="2" tabIndex="5" data-toggle="tooltip" title="गुरू"   data-original-title="guru"/>
+                        <input type="number" className="form-control" min="1" max="12" maxLength="2" onChange={event => setGuru(event.target.value)} value={guru}  onBlur={event => valRangeValidate(event)}  name="guru" id="guru" placeholder="गुरू" tabIndex="5" data-toggle="tooltip" title="गुरू"   data-original-title="guru"/>
                      </div>
                      <div className="col-2">
                         <label className="control-label"><b> सिंह </b></label>
                      </div>
                      <div className="col-4">
-                        <input type="number" className="form-control" onChange={event => setSeeha(event.target.value)} value={seeha}  onBlur={event => valRangeValidate(event)}  name="seeha" id="seeha" placeholder="सिंह" maxLength="2" tabIndex="17" data-toggle="tooltip" title="सिंह"   data-original-title="seeha"/>
+                        <input type="number" className="form-control" min="1" max="12" maxLength="2" onChange={event => setSeeha(event.target.value)} value={seeha}  onBlur={event => valRangeValidate(event)}  name="seeha" id="seeha" placeholder="सिंह"  tabIndex="17" data-toggle="tooltip" title="सिंह"   data-original-title="seeha"/>
                      </div>
                   </div>
                   <div className="row my-2 ms-1 me-1">
@@ -719,13 +760,13 @@ return (
                         <label className="control-label"><b> शुक्र </b></label>
                      </div>
                      <div className="col-4">
-                        <input type="number" className="form-control" onChange={event => setShukra(event.target.value)} value={shukra}  onBlur={event => valRangeValidate(event)}  name="shukra" id="shukra" placeholder="शुक्र" maxLength="2" tabIndex="6" data-toggle="tooltip" title="शुक्र"   data-original-title="shukra"/>
+                        <input type="number" className="form-control" min="1" max="12" maxLength="2" onChange={event => setShukra(event.target.value)} value={shukra}  onBlur={event => valRangeValidate(event)}  name="shukra" id="shukra" placeholder="शुक्र"  tabIndex="6" data-toggle="tooltip" title="शुक्र"   data-original-title="shukra"/>
                      </div>
                      <div className="col-2">
                         <label className="control-label"><b> कन्या </b></label>
                      </div>
                      <div className="col-4">
-                        <input type="number" className="form-control" onChange={event => setKanya(event.target.value)} value={kanya}  onBlur={event => valRangeValidate(event)}  name="kanya" id="kanya" placeholder="कन्या" maxLength="2" tabIndex="18" data-toggle="tooltip" title="कन्या"   data-original-title="kanya"/>
+                        <input type="number" className="form-control" min="1" max="12" maxLength="2" onChange={event => setKanya(event.target.value)} value={kanya}  onBlur={event => valRangeValidate(event)}  name="kanya" id="kanya" placeholder="कन्या" tabIndex="18" data-toggle="tooltip" title="कन्या"   data-original-title="kanya"/>
                      </div>
                   </div>
                   <div className="row my-2 ms-1 me-1">
@@ -733,13 +774,13 @@ return (
                         <label className="control-label"><b>शनि </b></label>
                      </div>
                      <div className="col-4">
-                        <input type="number" className="form-control" onChange={event => setShani(event.target.value)} value={shani}  onBlur={event => valRangeValidate(event)} name="shani" id="shani" placeholder="शनि" maxLength="2" tabIndex="7" data-toggle="tooltip" title="शनि"   data-original-title="shani"/>
+                        <input type="number" className="form-control" min="1" max="12" maxLength="2" onChange={event => setShani(event.target.value)} value={shani}  onBlur={event => valRangeValidate(event)} name="shani" id="shani" placeholder="शनि" tabIndex="7" data-toggle="tooltip" title="शनि"   data-original-title="shani"/>
                      </div>
                      <div className="col-2">
                         <label className="control-label"><b>तुला</b></label>
                      </div>
                      <div className="col-4">
-                        <input type="number" className="form-control" onChange={event => setTula(event.target.value)} value={tula}  onBlur={event => valRangeValidate(event)}  name="tula" id="tula" placeholder="तुला" maxLength="2" tabIndex="19" data-toggle="tooltip" title="तुला"   data-original-title="tula"/>
+                        <input type="number" className="form-control" min="1" max="12" maxLength="2" onChange={event => setTula(event.target.value)} value={tula}  onBlur={event => valRangeValidate(event)}  name="tula" id="tula" placeholder="तुला" tabIndex="19" data-toggle="tooltip" title="तुला"   data-original-title="tula"/>
                      </div>
                   </div>
                   <div className="row my-2 ms-1 me-1">
@@ -747,13 +788,13 @@ return (
                         <label className="control-label"><b>राहु</b></label>
                      </div>
                      <div className="col-4">
-                        <input type="number" className="form-control" onChange={event => setRahu(event.target.value)} value={rahu}  onBlur={event => valRangeValidate(event)}  name="rahu" id="rahu" placeholder="राहु" maxLength="2" tabIndex="8" data-toggle="tooltip" title="राहु"   data-original-title="rahu"/>
+                        <input type="number" className="form-control" min="1" max="12" maxLength="2" onChange={event => setRahu(event.target.value)} value={rahu}  onBlur={event => valRangeValidate(event)}  name="rahu" id="rahu" placeholder="राहु" tabIndex="8" data-toggle="tooltip" title="राहु"   data-original-title="rahu"/>
                      </div>
                      <div className="col-2">
                         <label className="control-label"><b> वृश्चिक </b></label>
                      </div>
                      <div className="col-4">
-                        <input type="number" className="form-control" onChange={event => setVrashuk(event.target.value)} value={vrashuk}  onBlur={event => valRangeValidate(event)}  name="vrashuk" id="vrashuk" placeholder="वृश्चिक" maxLength="2" tabIndex="20" data-toggle="tooltip" title="वृश्चिक"   data-original-title="vrashuk"/>
+                        <input type="number" className="form-control" min="1" max="12" maxLength="2" onChange={event => setVrashuk(event.target.value)} value={vrashuk}  onBlur={event => valRangeValidate(event)}  name="vrashuk" id="vrashuk" placeholder="वृश्चिक" tabIndex="20" data-toggle="tooltip" title="वृश्चिक"   data-original-title="vrashuk"/>
                      </div>
                   </div>
                   <div className="row my-2 ms-1 me-1">
@@ -761,13 +802,13 @@ return (
                         <label className="control-label"><b>केतु</b></label>
                      </div>
                      <div className="col-4">
-                        <input type="number" className="form-control" onChange={event => setKetu(event.target.value)} value={ketu}  onBlur={event => valRangeValidate(event)}  name="ketu" id="ketu" placeholder="केतु" maxLength="2" tabIndex="9" data-toggle="tooltip" title="केतु"   data-original-title="ketu"/>
+                        <input type="number" className="form-control" min="1" max="12" maxLength="2" onChange={event => setKetu(event.target.value)} value={ketu}  onBlur={event => valRangeValidate(event)}  name="ketu" id="ketu" placeholder="केतु" tabIndex="9" data-toggle="tooltip" title="केतु"   data-original-title="ketu"/>
                      </div>
                      <div className="col-2">
                         <label className="control-label"><b>धनु </b></label>
                      </div>
                      <div className="col-4">
-                        <input type="number" className="form-control" onChange={event => setDhanu(event.target.value)} value={dhanu}  onBlur={event => valRangeValidate(event)}  name="dhanu" id="dhanu" placeholder="धनु" maxLength="2" tabIndex="21" data-toggle="tooltip" title="धनु"   data-original-title="dhanu"/>
+                        <input type="number" className="form-control" min="1" max="12" maxLength="2" onChange={event => setDhanu(event.target.value)} value={dhanu}  onBlur={event => valRangeValidate(event)}  name="dhanu" id="dhanu" placeholder="धनु" tabIndex="21" data-toggle="tooltip" title="धनु"   data-original-title="dhanu"/>
                      </div>
                   </div>
                   <div className="row my-2 ms-1 me-1">
@@ -775,13 +816,13 @@ return (
                         <label className="control-label"><b>हर्षल</b></label>
                      </div>
                      <div className="col-4">
-                        <input type="number" className="form-control" onChange={event => setHarshal(event.target.value)} value={harshal}  onBlur={event => valRangeValidate(event)} name="harshal" id="harshal" placeholder="हर्षल" maxLength="2" tabIndex="10" data-toggle="tooltip" title="हर्षल"   data-original-title="harshal"/>
+                        <input type="number" className="form-control" min="1" max="12" maxLength="2" onChange={event => setHarshal(event.target.value)} value={harshal}  onBlur={event => valRangeValidate(event)} name="harshal" id="harshal" placeholder="हर्षल" tabIndex="10" data-toggle="tooltip" title="हर्षल"   data-original-title="harshal"/>
                      </div>
                      <div className="col-2">
                         <label className="control-label"><b> मकर</b></label>
                      </div>
                      <div className="col-4">
-                        <input type="number" className="form-control" onChange={event => setMakar(event.target.value)} value={makar}  onBlur={event => valRangeValidate(event)}  name="makar" id="makar" placeholder="मकर" maxLength="2" tabIndex="22" data-toggle="tooltip" title="मकर"   data-original-title="makar"/>
+                        <input type="number" className="form-control" min="1" max="12" maxLength="2" onChange={event => setMakar(event.target.value)} value={makar}  onBlur={event => valRangeValidate(event)}  name="makar" id="makar" placeholder="मकर" tabIndex="22" data-toggle="tooltip" title="मकर"   data-original-title="makar"/>
                      </div>
                   </div>
                   <div className="row my-2 ms-1 me-1">
@@ -789,13 +830,13 @@ return (
                         <label className="control-label"><b>नेप</b></label>
                      </div>
                      <div className="col-4">
-                        <input type="number" className="form-control" onChange={event => setNep(event.target.value)} value={nep}  onBlur={event => valRangeValidate(event)}  name="nep" id="nep" placeholder="नेप" maxLength="2" tabIndex="11" data-toggle="tooltip" title="नेप"   data-original-title="nep"/>
+                        <input type="number" className="form-control" min="1" max="12" maxLength="2" onChange={event => setNep(event.target.value)} value={nep}  onBlur={event => valRangeValidate(event)}  name="nep" id="nep" placeholder="नेप" tabIndex="11" data-toggle="tooltip" title="नेप"   data-original-title="nep"/>
                      </div>
                      <div className="col-2">
                         <label className="control-label"><b> कुम्भ </b></label>
                      </div>
                      <div className="col-4">
-                        <input type="number" className="form-control" onChange={event => setKumbh(event.target.value)} value={kumbh} onBlur={event => valRangeValidate(event)}   name="kumbh" id="kumbh" placeholder="कुम्भ" maxLength="2" tabIndex="23" data-toggle="tooltip" title="कुम्भ"   data-original-title="kumbh"/>
+                        <input type="number" className="form-control" min="1" max="12" maxLength="2" onChange={event => setKumbh(event.target.value)} value={kumbh} onBlur={event => valRangeValidate(event)}   name="kumbh" id="kumbh" placeholder="कुम्भ" tabIndex="23" data-toggle="tooltip" title="कुम्भ"   data-original-title="kumbh"/>
                      </div>
                   </div>
                   <div className="row my-2 ms-1 me-1">
@@ -803,13 +844,13 @@ return (
                         <label className="control-label"><b>प्लू </b></label>
                      </div>
                      <div className="col-4">
-                        <input type="number" className="form-control" onChange={event => setPlu(event.target.value)} value={plu}  onBlur={event => valRangeValidate(event)} name="plu" id="plu" placeholder="प्लू" maxLength="2" tabIndex="12" data-toggle="tooltip" title="प्लू"   data-original-title="plu"/>
+                        <input type="number" className="form-control" min="1" max="12" maxLength="2" onChange={event => setPlu(event.target.value)} value={plu}  onBlur={event => valRangeValidate(event)} name="plu" id="plu" placeholder="प्लू" tabIndex="12" data-toggle="tooltip" title="प्लू"   data-original-title="plu"/>
                      </div>
                      <div className="col-2">
                         <label className="control-label"> <b>मीन</b></label>
                      </div>
                      <div className="col-4">
-                        <input type="number" className="form-control" onChange={event => setMin(event.target.value)} value={min}  onBlur={event => valRangeValidate(event)}  name="min" id="min" placeholder="मीन" maxLength="2" tabIndex="24" data-toggle="tooltip" title="मीन"   data-original-title="min"/>
+                        <input type="number" className="form-control" min="1" max="12" maxLength="2" onChange={event => setMin(event.target.value)} value={min}  onBlur={event => valRangeValidate(event)}  name="min" id="min" placeholder="मीन" tabIndex="24" data-toggle="tooltip" title="मीन"   data-original-title="min"/>
                      </div>
                   </div>
                   <div className="text-center button-make p-3">
