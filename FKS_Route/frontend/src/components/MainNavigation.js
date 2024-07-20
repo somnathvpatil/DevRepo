@@ -21,6 +21,7 @@ function MainNavigation() {
               Home
             </NavLink>
           </li>
+          {token && (
           <li>
             <NavLink
               to="/userReg"
@@ -32,6 +33,8 @@ function MainNavigation() {
               User Reg
             </NavLink>
           </li>
+        )}
+          {token && (
           <li>
             <NavLink
               to="/userRegDetails"
@@ -43,6 +46,8 @@ function MainNavigation() {
               User Reg Details
             </NavLink>
           </li>
+           )}
+          {token && (
           <li>
             <NavLink
               to="/blogPost"
@@ -54,19 +59,7 @@ function MainNavigation() {
               New Blog Post
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to="/testPDF"
-              className={({ isActive }) =>
-                isActive ? classes.active : undefined
-              }
-              end
-            >
-              TestPDF
-            </NavLink>
-          </li>
-          
-
+          )}
           {!token && (
             <li>
               <NavLink
@@ -79,6 +72,17 @@ function MainNavigation() {
               </NavLink>
             </li>
           )}
+           <li>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+              end
+            >
+              About
+            </NavLink>
+          </li>
           {token && (
             <li>
               <Form action="/logout" method="post">
@@ -89,7 +93,6 @@ function MainNavigation() {
 
         </ul>
       </nav>
-      <NewsletterSignup />
     </header>
   );
 }

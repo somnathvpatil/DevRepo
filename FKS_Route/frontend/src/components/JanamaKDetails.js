@@ -15,8 +15,11 @@ export default function JanamaKDetails() {
     html2canvas(inputRef.current).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
       const pdf = new jsPDF();
-      pdf.addImage(imgData, "JPEG", 0, 0);
+      pdf.addImage(imgData, "JPEG", 0, 0,210,210);
       pdf.save("kundali.pdf");
+
+
+      
     });
   };
 
@@ -28,7 +31,7 @@ export default function JanamaKDetails() {
   <div className="accordion" id="accordionPanelsStayOpenExample" ref={inputRef}>
   <div className="accordion-item">
     <h2 className="accordion-header" >
-      <button className="accordion-button Hometab" style={{backgroundColor:'#c9c7be', lineHeight: '5px'}} type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+      <button className="accordion-button Hometab" style={{backgroundColor:'#c9c7be', lineHeight: '2px'}} type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
         Customer Information
       </button>
     </h2>
@@ -39,9 +42,7 @@ export default function JanamaKDetails() {
           <tr>
             <td><b>FirstName :</b>  &emsp;{dataJanmaKDetails[0].firstName}</td>
             <td><b>Gender :</b>  &emsp;{dataJanmaKDetails[0].gender}</td>
-            <td><b>Email ID :</b>  &emsp;{dataJanmaKDetails[0].email}</td>
-            <td> <button  className="btn btn-outline-secondary btn-lg" onClick={printDocument}>PDF View</button>              
-            </td>
+            <td><b>Email ID :</b>  &emsp;{dataJanmaKDetails[0].email}</td>           
           </tr>
           <tr>
             <td><b>Middle Name :</b>   &emsp;{dataJanmaKDetails[0].middelName}</td>
@@ -52,6 +53,7 @@ export default function JanamaKDetails() {
             <td><b>Last Name :</b>  &emsp;{dataJanmaKDetails[0].lastName}</td>
             <td><b>Mobile No :</b>  &emsp;{dataJanmaKDetails[0].mobileNo}</td>
             <td><b>Address :</b>  &emsp;{dataJanmaKDetails[0].address2}</td>
+            <td> <button  className="btn btn-outline-secondary" onClick={printDocument}>PDF View</button></td>
           </tr>
         </tbody>
       </table>
@@ -61,7 +63,7 @@ export default function JanamaKDetails() {
   {dataJanmaKDetails[1].map((newKunaliGenData,index) => (
          <div className="accordion-item">
          <h2 className="accordion-header">
-           <button className="accordion-button collapsed Hometab"  style={{backgroundColor:'#c9c7be', lineHeight: '5px'}} type="button" data-bs-toggle="collapse" 
+           <button className="accordion-button collapsed Hometab"  style={{backgroundColor:'#c9c7be', lineHeight: '2px'}} type="button" data-bs-toggle="collapse" 
            data-bs-target={`#panelsStayOpen-${index}`}  aria-expanded="false" aria-controls={`panelsStayOpen-${index}`}>
            {newKunaliGenData.name}
            </button>
@@ -71,7 +73,7 @@ export default function JanamaKDetails() {
           <div className="accordion-body">
           <strong>{k_lbl_dtl.label}</strong>
                 &emsp;{k_lbl_dtl.details}
-              <br />              
+                <hr/>
             </div>  
           </div>
          ))}

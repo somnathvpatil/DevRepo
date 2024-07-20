@@ -71,16 +71,12 @@ export default function UserReg({method}) {const data = useActionData();
               />          
             </div>
             <div className="col-md-4">
-              <label  htmlFor="gender1" className="form-label">Gender *</label>
-              <input
-                type="text"
-                placeholder="Gender"
-                name="gender"
-                required
-                defaultValue="ABC"
-                aria-label="User Name"
-                className="form-control"
-              />          
+              <label  htmlFor="gender" className="form-label">Gender *</label>
+               <select className="form-select" name="gender">
+                <option defaultValue='NA'>please select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>          
             </div>
             <div className="col-md-4">
               <label  htmlFor="username" className="form-label">Username</label>

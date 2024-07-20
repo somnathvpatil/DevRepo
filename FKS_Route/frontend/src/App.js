@@ -25,7 +25,7 @@ import UserRegDetailsPage,{action as manipulateUserRegDetailsAction} from './pag
 import {loader as userRegDetilsLoader} from './pages/UserRegDetailsPage';
 import JanmaKDetailsPage,{loader as janmaKDetailsloader}   from './pages/JanmaKDetailsPage';
 import NewBlogPostForm,{action as blogSubmitAction } from './pages/BlogPostForm';
-import TestPDF from './components/TestPDF';
+import AboutPage from './pages/AboutPage';
 
 const router = createBrowserRouter([
   {
@@ -108,17 +108,12 @@ const router = createBrowserRouter([
         action: authAction,
       },
       {
-        path: 'newsletter',
-        element: <NewsletterPage />,
-        action: newsletterAction,
+        path: 'about',
+        element: <AboutPage />
       },
       {
         path: 'logout',
         action: logoutAction,
-      },
-      {
-        path: 'testPDF',
-        element: <TestPDF />,
       },
     ],
   },
