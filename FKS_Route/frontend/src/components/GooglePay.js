@@ -1,10 +1,12 @@
 import React from 'react'
 import GooglePayButton from '@google-pay/button-react';
+import {Form} from 'react-router-dom';
 
 export default function GooglePay() {
   return (
+    <Form method="post">
     <div>
-      <span style={{textAlign:'center'}}><h4>Registraion Successfully done you need to pay Kundali Charges & then within 15days you will get kundali by courier</h4></span>
+      <span style={{textAlign:'center'}}><h4>Registraion Successfully done you need to pay Kundali Charges & then juwithin 15days you will get kundali by courier</h4></span>
         <GooglePayButton
               environment='TEST' // PRODUCTION
               paymentRequest={
@@ -60,5 +62,6 @@ export default function GooglePay() {
               </div>
             </div>
     </div>
+    </Form>
   )
 }

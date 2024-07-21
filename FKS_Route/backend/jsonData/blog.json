@@ -1,1 +1,40 @@
-[{"blogByName":"snehal","blogDate":"2024-07-15","title":"dsfds","section":"rT","description":"dsfdsfsdfsdf"},{"blogByName":"somnath","blogDate":"2024-07-14","title":"dsfds","section":"rT","description":"dsfdsfsdfsdf"},{"blogByName":"snehal","blogDate":"2024-07-10","title":"sdfds","section":"rT","description":"dsfdsfdsf","blogId":"8348fe9f-e1ce-4d4f-9c57-bdfea9ab5dcf"}]
+[
+    {
+        "blogByName": "snehal",
+        "blogDate": "2024-07-15",
+        "title": "dsfds",
+        "section": "rT",
+        "description": "dsfdsfsdfsdf"
+    },
+    {
+        "blogByName": "somnath",
+        "blogDate": "2024-07-14",
+        "title": "आजचे राशीभविष्य",
+        "section": "Right-Top",
+        "description": "तुमचा दिवस कसा जाईल याची खात्री नाही? शीर्ष ज्योतिषांकडून विनामूल्य मेष राशिफल ऑनलाइन भविष्यवाणी मिळवा. आजच तुमची मेष राशीची राशीभविष्य वाचा!"
+    },
+    {
+        "blogByName": "snehal",
+        "blogDate": "2024-07-10",
+        "title": "sdfds",
+        "section": "rT",
+        "description": "dsfdsfdsf",
+        "blogId": "8348fe9f-e1ce-4d4f-9c57-bdfea9ab5dcf"
+    },
+    {
+        "blogByName": "priyanka",
+        "blogDate": "2024-07-21",
+        "title": "आजचे राशीभविष्य",
+        "section": "lT",
+        "description": "तुमचा दिवस कसा जाईल याची खात्री नाही? शीर्ष ज्योतिषांकडून विनामूल्य मेष राशिफल ऑनलाइन भविष्यवाणी मिळवा. आजच तुमची मेष राशीची राशीभविष्य वाचा!",
+        "blogId": "e415f8a1-ce05-4cdc-9597-27075dc56d47"
+    },
+    {
+        "blogByName": "snehal",
+        "blogDate": "2024-07-11",
+        "title": "सुसंगतता",
+        "section": "lB",
+        "description": "प्रेमाने गोंधळलेले? शंका दूर करा आणि ठिणग्या शोधा! आमच्या साधनाचा वापर करून तुमच्या जोडीदाराशी सुसंगतता तपासा आणि कायमचे टिकणारे प्रेम प्रज्वलित करा.",
+        "blogId": "415ddbfa-e424-4162-b678-edaae6d7c8d9"
+    }
+]

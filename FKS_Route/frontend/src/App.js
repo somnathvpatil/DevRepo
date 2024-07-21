@@ -20,12 +20,13 @@ import { action as logoutAction } from './pages/Logout';
 import { checkAuthLoader, tokenLoader } from './util/auth';
 import UserRegPage,{action as manipulateUserAction} from './pages/UserRegPage';
 import JanmaK,{action as janmaKAction} from './pages/JanmaK';
-import GooglePayPage from './pages/GooglePayPage';
+import GooglePayPage,{action as emailSendAction} from './pages/GooglePayPage';
 import UserRegDetailsPage,{action as manipulateUserRegDetailsAction} from './pages/UserRegDetailsPage';
 import {loader as userRegDetilsLoader} from './pages/UserRegDetailsPage';
 import JanmaKDetailsPage,{loader as janmaKDetailsloader}   from './pages/JanmaKDetailsPage';
 import NewBlogPostForm,{action as blogSubmitAction } from './pages/BlogPostForm';
 import AboutPage from './pages/AboutPage';
+import {loader as blogsDetailLoader} from './pages/Blog';
 
 const router = createBrowserRouter([
   {
@@ -33,13 +34,14 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     errorElement: <ErrorPage />,
     id: 'root',
-    loader: tokenLoader,
+    loader: blogsDetailLoader,
     children: [
       { index: true, element: <HomePage /> },
       {
         path: 'userReg',
         element: <UserRegPage />,
         action: manipulateUserAction,
+
       },
       {
         path: 'userRegDetails',
@@ -64,8 +66,9 @@ const router = createBrowserRouter([
       },
 
       {
-        path: 'googlePay',
+        path: 'googlePay/:emailId',
         element: <GooglePayPage />,
+        action: emailSendAction,
       },
       {
         path: 'events',

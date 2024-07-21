@@ -82,49 +82,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ## npm install @mui/material @mui/styled-engine-sc styled-components
 ## npm install @mui/x-data-grid
 ## npm i material-react-table
-<Table striped bordered hover>
-         <thead>
-            <tr>
-                <th>id</th>
-                <th>FirstName</th>
-                <th>MiddelName</th>
-                <th>LastName</th>
-                <th>DateBirth</th>
-                <th>Gender</th>
-                <th>UserName</th>
-                <th>DatePlace</th>
-                <th>Email</th>
-                <th>Pwd</th>
-                <th>Address1</th>
-                <th>MobileNo</th>
-                <th>Address2</th>
-                <th>City</th>
-                <th>State</th>
-                <th>Zip</th>
-                <th>ChkValid</th>
-            </tr>
-         </thead>
-         <tbody>
-         {resUserRegData.map((resUserReg) => (
-           <tr>
-             <td>{resUserReg.id}</td>
-            <td>{resUserReg.firstName}</td>
-            <td>{resUserReg.middelName}</td>
-            <td>{resUserReg.lastName}</td>
-            <td>{resUserReg.dateBirth}</td>
-            <td>{resUserReg.gender}</td>
-            <td>{resUserReg.userName}</td>
-            <td>{resUserReg.datePlace}</td>
-            <td>{resUserReg.email}</td>
-            <td>{resUserReg.pwd}</td>
-            <td>{resUserReg.address1}</td>
-            <td>{resUserReg.mobileNo}</td>
-            <td>{resUserReg.address2}</td>
-            <td>{resUserReg.city}</td>
-            <td>{resUserReg.state}</td>
-            <td>{resUserReg.zip}</td>
-            <td>{resUserReg.chkValid}</td>
-          </tr>
-        ))}
-         </tbody>
-      </Table>
+## npm install nodemailer
+## https://mailtrap.io/blog/send-emails-with-nodejs/#Send-HTML-email-with-dynamic-content

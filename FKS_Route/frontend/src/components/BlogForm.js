@@ -1,13 +1,23 @@
 import React from 'react'
 import classes from './BlogForm.module.css';
-export default function BlogForm() {
+export default function BlogForm({blogs}) {
   return (
+   
     <div className="col-xl-2 col-lg-2 ">
+      {console.log(blogs)}
     <div className="box-wrapper sidebar__widget">
     <div className="sidebar__widget-head">
        <h4 className="sidebar__widget_title">Blog-1</h4>
     </div>
     <div className="sidebar__widget-content">
+    <article>
+      <h5>Title : {blogs.title}</h5>
+      <p>BlogDate :{blogs.blogDate}</p>
+      <p>BlogPostBy :{blogs.blogByName}</p>
+      <p>Section :{blogs.section}</p>
+      <p>Description :{blogs.description}</p>
+       
+    </article>
     <article>
       <h5>आजचे राशीभविष्य</h5>
        <p> तुमचा दिवस कसा जाईल याची खात्री नाही? शीर्ष ज्योतिषांकडून विनामूल्य मेष राशिफल ऑनलाइन भविष्यवाणी मिळवा. आजच तुमची मेष राशीची राशीभविष्य वाचा!</p>

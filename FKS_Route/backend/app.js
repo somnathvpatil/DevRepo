@@ -5,6 +5,7 @@ const customerRoutes = require('./routes/customers');
 const authRoutes = require('./routes/auth');
 const KRoutes = require('./routes/KServices');
 const BServices = require('./routes/BlogServices');
+const EmailServices = require('./routes/EmailService');
 
 
 const app = express();
@@ -16,12 +17,13 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Authorization');
   next();
 });
-
+app.use(BServices);
 app.use(authRoutes);
 
 app.use(KRoutes);
 app.use(customerRoutes);
-app.use(BServices);
+
+app.use(EmailServices);
 
 app.use((error, req, res, next) => {
   const status = error.status || 500;

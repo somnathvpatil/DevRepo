@@ -60,6 +60,6 @@ export async function action({ request , params }) {
       throw json({ message: 'Could not save Customer Details.' }, { status: 500 });
     }
   
-    return redirect('/googlePay');
+    return redirect('/googlePay/'+data.get('email'));
   }
   
