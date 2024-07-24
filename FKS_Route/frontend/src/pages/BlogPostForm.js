@@ -13,11 +13,13 @@ export default function BlogPostForm() {
 export async function action({ request , params }) {
   const method = request.method;
   const data = await request.formData();
-
+  const blogId = params.blogId;
+  console.log("blogId",blogId);
   const blogData = {
+    blogId:blogId,
     blogByName:data.get('blogByName'),
-	blogDate:data.get('blogDate'),
-	title:data.get('title'),
+	  blogDate:data.get('blogDate'),
+	  title:data.get('title'),
     section:data.get('section'),
     description:data.get('description'),
   };
@@ -46,3 +48,22 @@ console.log("blogData",blogData);
 
   return redirect('/');  
 }
+
+export async function loader({ request, params }) {
+  const blogId = params.blogId;
+  console.log("blogId",blogId);
+    const response = await fetch('http://localhost:3001/getBlogById/'+blogId);
+    if (!response.ok) {
+      throw json(
+        { message: 'Could not fetch details for selected event.' },
+        {
+          status: 500,
+        }
+      );
+    } else {
+      const resBlogRegData = await response.json();
+      console.log("resBlogRegData",resBlogRegData);
+      return resBlogRegData;
+    }
+  }
+  

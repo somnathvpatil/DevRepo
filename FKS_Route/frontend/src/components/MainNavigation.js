@@ -60,6 +60,19 @@ function MainNavigation() {
             </NavLink>
           </li>
           )}
+          {token && (
+          <li>
+            <NavLink
+              to="/blogRegPostDetails"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+              end
+            >
+              Blog Post Details
+            </NavLink>
+          </li>
+          )}
           {token && (<li>
             <NavLink
               to="/about"

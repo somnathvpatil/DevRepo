@@ -25,9 +25,11 @@ import UserRegDetailsPage,{action as manipulateUserRegDetailsAction} from './pag
 import {loader as userRegDetilsLoader} from './pages/UserRegDetailsPage';
 import JanmaKDetailsPage,{loader as janmaKDetailsloader}   from './pages/JanmaKDetailsPage';
 import NewBlogPostForm,{action as blogSubmitAction } from './pages/BlogPostForm';
+import {loader as loadblog } from './pages/BlogPostForm';
 import AboutPage from './pages/AboutPage';
 import {loader as blogsDetailLoader} from './pages/Blog';
-
+import BlogRegDetailsPage, {action as blogRegDetails} from './pages/BlogRegDetailsPage';
+import {loader as blogDetilsLoader} from './pages/BlogRegDetailsPage';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -41,7 +43,6 @@ const router = createBrowserRouter([
         path: 'userReg',
         element: <UserRegPage />,
         action: manipulateUserAction,
-
       },
       {
         path: 'userRegDetails',
@@ -60,11 +61,17 @@ const router = createBrowserRouter([
         loader: janmaKDetailsloader,
       },
       {
-        path: 'blogPost',
+        path: 'blogPost/:blogId',
         element: <NewBlogPostForm />,
         action: blogSubmitAction,
+        loader: loadblog, 
       },
-
+      {
+        path: 'blogRegPostDetails',
+        element: <BlogRegDetailsPage />,
+        action: blogRegDetails,
+        loader: blogDetilsLoader,
+      },
       {
         path: 'googlePay/:emailId',
         element: <GooglePayPage />,

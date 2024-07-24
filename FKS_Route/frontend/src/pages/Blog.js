@@ -2,12 +2,12 @@ import React,{ Suspense } from 'react';
 import { useLoaderData, json, defer, Await } from 'react-router-dom';
 import BlogForm from '../components/BlogForm'
 
-export default function Blog() {
+export default function Blog({sec1,sec2}) {
   const { blogs } = useLoaderData();
   return (
     <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
       <Await resolve={blogs}>
-        {(loadedBlogs) => <BlogForm blogs={loadedBlogs} />}
+        {(loadedBlogs) => <BlogForm blogs={loadedBlogs} sec1={sec1} sec2={sec2}/>}
       </Await>
     </Suspense>
   );

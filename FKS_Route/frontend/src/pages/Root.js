@@ -35,14 +35,14 @@ function RootLayout() {
         <div className="mx-3 my-1">   
 
         <div className="row">
-          <Blog/> 
+          <Blog sec1='rT' sec2='rB'/> 
           <div className='col-xl-8 col-lg-8'  >
             <div className='box-wrapper'>
               {/* {navigation.state === 'loading' && <p>Loading...</p>} */}
               <Outlet />
             </div>
             </div>
-            <Blog/>           
+            <Blog sec1='lT' sec2='lB'/> 
         </div>
         </div>
         </main>

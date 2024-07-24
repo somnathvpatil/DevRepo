@@ -17,14 +17,37 @@ async function saveBlogDetails(blogData) {
 
 async function getBlogByDate(dtp) {
   const readData = await readBlogData();
+  let BRData=[];
   console.log("dtp",dtp);
-  const blogData = readData.find((bd) => bd.blogDate === dtp);
-  if (!blogData) {
-    throw new NotFoundError('Could not find Blog Details for date ' + dtp);
+  
+  for (var i = 0; i < readData.length; i++) {
+    if (readData[i].blogDate===dtp) {
+      BRData.push(readData[i]);      
+    }
   }
-  return blogData;
+  return BRData;
+}
+
+async function getBlogByBlogId(blogId) {
+  const readData = await readBlogData();
+  let BRData;
+  console.log("blogId",blogId);
+  
+  for (var i = 0; i < readData.length; i++) {
+    if (readData[i].blogId===blogId) {
+      BRData=readData[i]; 
+      break;     
+    }
+  }
+  return BRData;
+}
+async function getAllBlogDetails() {
+  const readData = await readBlogData();
+  return readData;
 }
 exports.saveBlogDetails=saveBlogDetails
 exports.getBlogByDate=getBlogByDate
+exports.getAllBlogDetails=getAllBlogDetails
+exports.getBlogByBlogId=getBlogByBlogId
 
 
